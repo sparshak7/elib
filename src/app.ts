@@ -13,6 +13,8 @@ app.get("/", (req, res, next) => {
   })
 })
 
+app.use(express.json())
+
 app.use("/api/users", userRouter)
 
 // client -> router -> middleware (1 or more, next()) -> request handler (callback) -> global error handler
