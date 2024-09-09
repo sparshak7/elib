@@ -1,5 +1,6 @@
 import express from "express"
 import globalErrorHandler from "./middlewares/globalErrorHandler"
+import userRouter from "./user/userRouter"
 
 const app = express()
 
@@ -11,6 +12,8 @@ app.get("/", (req, res, next) => {
     message: "API working",
   })
 })
+
+app.use("/api/users", userRouter)
 
 // client -> router -> middleware (1 or more, next()) -> request handler (callback) -> global error handler
 /* usually request handler sends the response to client but if there is an error in handler, we can use
