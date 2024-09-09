@@ -3,7 +3,8 @@ conf()
 
 const _config = {
   port: process.env.PORT,
-  dbUri: process.env.MONGO_URI
+  dbUri: process.env.MONGO_URI,
+  env: process.env.NODE_ENV,
 }
 
 export const config = Object.freeze(_config)
